@@ -11,6 +11,7 @@ describe('workspace-project App', () => {
   it('should display welcome message', () => {
     page.navigateTo();
     expect(page.getTitleText()).toEqual('Welcome to protractor-onpageload-bug!');
+    browser.executeScript('return window._testorder').then(order => console.log('test order', order));
   });
 
   afterEach(async () => {

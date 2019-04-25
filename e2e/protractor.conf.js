@@ -24,5 +24,15 @@ exports.config = {
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
-  }
+  },
+  plugins: [{
+    inline: {
+      onPageLoad: function(browser) {
+        return browser.executeScript('(window._testorder = window._testorder || []).push("plugin onPageLoad")');
+      },
+      onPageStable: function(browser) {
+        return browser.executeScript('(window._testorder = window._testorder || []).push("plugin onPageStable")');
+      }
+    }
+  }]
 };
