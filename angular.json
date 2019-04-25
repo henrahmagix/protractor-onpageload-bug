@@ -52,6 +52,14 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "mocked": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.mock.ts"
+                }
+              ]
             }
           }
         },
@@ -63,6 +71,9 @@
           "configurations": {
             "production": {
               "browserTarget": "protractor-onpageload-bug:build:production"
+            },
+            "mocked": {
+              "browserTarget": "protractor-onpageload-bug:build:mocked"
             }
           }
         },
@@ -117,6 +128,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "protractor-onpageload-bug:serve:production"
+            },
+            "mocked": {
+              "devServerTarget": "protractor-onpageload-bug:serve:mocked"
             }
           }
         },

@@ -12,6 +12,7 @@ describe('workspace-project App', () => {
     page.navigateTo();
     expect(page.getTitleText()).toEqual('Welcome to protractor-onpageload-bug!');
     browser.executeScript('return window._testorder').then(order => console.log('test order', order));
+    browser.executeScript('return window._fooservicemapping').then(fooservicemapping => console.log('foo service mapping', fooservicemapping));
   });
 
   afterEach(async () => {

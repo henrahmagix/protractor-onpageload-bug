@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FooServiceMapping } from 'src/environments/environment';
 
 const w = <any>window;
 
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit {
 
   constructor() {
     (w._testorder = w._testorder || []).push('app component constructor');
+    w._fooservicemapping = FooServiceMapping.getFoo();
   }
 
   ngOnInit() {
